@@ -12,7 +12,7 @@ class createDrops{
 
     update(){
         if(this.body.position.y>height){
-        Matter.BodysetPosition(this.body,{x:random(0,500),y:random(0,650)})
+        Matter.Body.setPosition(this.body,{x:random(0,500),y:random(0,650)})
     }
 }
 

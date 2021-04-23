@@ -12,11 +12,11 @@ var thunderCreatedFrame=0
 
 
 function preload(){
-    night=loadImage("images/rainynight.jpg")
-    thunder1=loadImage("images/thunderbolt/1.jpg")
-    thunder2=loadImage("images/thundernolt/2.jpg")
-    thunder3=loadImage("images/thundernolt/3.jpg")
-    thunder4=loadImage("images/thundernolt/4.jpg")
+    
+    thunder1=loadImage("1.png")
+    thunder2=loadImage("2.png")
+    thunder3=loadImage("3.png")
+    thunder4=loadImage("4.png")
 }
 
 function setup(){
@@ -28,15 +28,17 @@ function setup(){
 
     umbrella=new Umbrella(200,500)
 
+    if (frameCount%80===0){
     for(var i=0;i<maxDrops;i++){
         drops.push(new createDrops(random(0,500),random(0,500)))
     }
+}
     
 }
 
 function draw(){
     Engine.update(engine)
-    background(night)
+    background("red")
 
 
 rand=Math.round(random(1,4))
@@ -55,6 +57,7 @@ if(frameCount%80 === 0){
         default:break
     }
     Thunder.scale=0.7
+}
 
 
     if(thunderCreatedFrame+100===frameCount&&Thunder){
@@ -69,11 +72,11 @@ if(frameCount%80 === 0){
         drops[i].display()
         drops[i].update()
     }
+    
+    
+
+
+    
     drawSprites()
-    }
-
-
-    
-    
 }
 
